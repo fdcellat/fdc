@@ -30,7 +30,7 @@ data1 = scaler.fit_transform(data1)
 inp = data1[:,0:12]
 out = data1[:,12]
 
-#Creating Model with 64-128-256 dense, 12 dimmension, OLS method and train %93 to predict %7 then give accuracy rate
+#Creating Model with 64-128-256 dense, 12 dimmension, OLS method and train %92 to predict %8 then give accuracy rate
 model = Sequential()
 model.add(Dense(64, input_dim=12))
 model.add(Activation('relu'))
@@ -39,7 +39,7 @@ model.add(Activation('relu'))
 model.add(Dense(256))
 model.add(Activation('softmax'))
 model.compile(optimizer='adam', loss = 'sparse_categorical_crossentropy',metrics =['accuracy'])
-model.fit(inp,out, epochs=3, batch_size=32, validation_split = 0.08)
+model.fit(inp,out, epochs=5, batch_size=32, validation_split = 0.08)
 
 
 #predict spesific sample(must print 1)
